@@ -1,26 +1,27 @@
 package de.felixstarke.fowler;
 
-public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
-    private String title;
+class Movie {
+    static final int CHILDREN = 2;
+    static final int REGULAR = 0;
+    static final int NEW_RELEASE = 1;
+
+    final private String title;
     private int priceCode;
 
-    public Movie(String newtitle, int newpriceCode) {
-        title = newtitle;
-        priceCode = newpriceCode;
+    Movie(String title, int priceCode) {
+        this.title = title;
+        this.priceCode = priceCode;
     }
 
-    public int getPriceCode() {
+    int getPriceCode() {
         return priceCode;
     }
 
-    public void setPriceCode(int arg) {
+    void setPriceCode(int arg) {
         priceCode = arg;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 }

@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 class RentalTest {
-    private Movie movie = new Movie("Back To The Future", Movie.REGULAR);
-    private Rental rental = new Rental(movie, 10);
+    final private Movie movie = new Movie("Back To The Future", Movie.REGULAR);
+    final private Rental rental = new Rental(movie, 10);
 
     @Test
     void getDaysRented() {

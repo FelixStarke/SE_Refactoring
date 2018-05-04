@@ -53,7 +53,7 @@ class CustomerTest {
     @Test
     void addRental3() {
         Movie movie1 = new Movie("Back To The Future", Movie.REGULAR);
-        Movie movie2 = new Movie("Back To The Future II", Movie.CHILDRENS);
+        Movie movie2 = new Movie("Back To The Future II", Movie.CHILDREN);
         Movie movie3 = new Movie("Back To The Future III", Movie.NEW_RELEASE);
         Rental rental1 = new Rental(movie1, 10);
         Rental rental2 = new Rental(movie2, 5);

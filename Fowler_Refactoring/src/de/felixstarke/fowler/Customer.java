@@ -4,21 +4,22 @@ import java.lang.*;
 import java.util.*;
 
 class Customer {
-    private String name;
-    private Vector rentals = new Vector();
-    public Customer (String newname){
-        name = newname;
+    final private String name;
+    final private Vector<Rental> rentals = new Vector<>();
+
+    Customer (String name){
+        this.name = name;
     }
 
-    public void addRental(Rental arg) {
+    void addRental(Rental arg) {
         rentals.addElement(arg);
     }
 
-    public String getName (){
+    String getName (){
         return name;
     }
 
-    public String statement() {
+    String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration enum_rentals = rentals.elements();	    
@@ -26,7 +27,7 @@ class Customer {
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
         while (enum_rentals.hasMoreElements()) {
-            double thisAmount = 0;
+            double thisAmount;
             Rental each = (Rental) enum_rentals.nextElement();
             //determine amounts for each line
             thisAmount = amountFor(each);
@@ -56,7 +57,7 @@ class Customer {
             case Movie.NEW_RELEASE:
                 thisAmount += each.getDaysRented() * 3;
                 break;
-            case Movie.CHILDRENS:
+            case Movie.CHILDREN:
                 thisAmount += 1.5;
                 if (each.getDaysRented() > 3)
                     thisAmount += (each.getDaysRented() - 3) * 1.5;

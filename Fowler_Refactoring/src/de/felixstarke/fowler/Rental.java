@@ -1,16 +1,19 @@
 package de.felixstarke.fowler;
 
 class Rental {
-    private Movie movie;
-    private int daysRented;
-    public Rental(Movie newmovie, int newdaysRented) {
-        movie = newmovie;
-        daysRented = newdaysRented;
+    final private Movie movie;
+    final private int daysRented;
+
+    Rental(Movie movie, int daysRented) {
+        this.movie = movie;
+        this.daysRented = daysRented;
     }
-    public int getDaysRented() {
+
+    int getDaysRented() {
         return daysRented;
     }
-    public Movie getMovie() {
+
+    Movie getMovie() {
         return movie;
     }
 }

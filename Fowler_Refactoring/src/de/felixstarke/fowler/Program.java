@@ -28,5 +28,3 @@ public class Program
         System.out.println(result);
     }
 }
-
-

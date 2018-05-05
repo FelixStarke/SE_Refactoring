@@ -10,7 +10,7 @@ class Movie {
 
     Movie(String title, int priceCode) {
         this.title = title;
-        this.priceCode = priceCode;
+        setPriceCode(priceCode);
     }
 
     int getPriceCode() {
